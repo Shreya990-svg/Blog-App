@@ -18,9 +18,10 @@ function Signup() {
     try {
       const userData = await authService.createAccount(data)
       if (userData) {
-        const userData = await authService.getCurrentUser()
-        if (userData) {
-          dispatch(login(userData))
+        const userdata = await authService.getCurrentUser()
+        if (userdata) {
+          // Fix: Wrap userdata in an object with userData property
+          dispatch(login({ userData: userdata }))
           navigate("/")
         }
       }

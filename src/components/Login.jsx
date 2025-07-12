@@ -19,7 +19,8 @@ function Login() {
       if (session) {
         const userdata = await authService.getCurrentUser()
         if (userdata) {
-          dispatch(authLogin(userdata))
+          // Fix: Wrap userdata in an object with userData property
+          dispatch(authLogin({ userData: userdata }))
           navigate("/")
         }
       }

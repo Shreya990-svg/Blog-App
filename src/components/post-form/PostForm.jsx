@@ -13,7 +13,7 @@ function PostForm({post}) {
     const{register,handleSubmit,watch,setValue,control,getValues,formState: {errors}}=useForm({
         defaultValues: {
             title:post?.title || '',
-            slug:post?.$id || '',
+            slug:post?.slug || '',
             content:post?.content || '',
             status:post?.status || 'active'
         }
@@ -208,3 +208,4 @@ function PostForm({post}) {
 }
 
 export default PostForm
+
