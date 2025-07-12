@@ -39,7 +39,7 @@ function PostForm({post}) {
                     featuredImage:file?file.$id:undefined
                 });
                 if(dbPost){
-                    navigate(/post/${dbPost.$id})
+                    navigate(`/post/${dbPost.$id}`)
                 } else {
                     setError('Failed to update post')
                 }
@@ -78,7 +78,7 @@ function PostForm({post}) {
                     console.log("Post created:", dbPost)
                     
                     if(dbPost && dbPost.$id){
-                        navigate(/post/${dbPost.$id})
+                        navigate(`/post/${dbPost.$id}`)
                     } else {
                         setError('Failed to create post - no post returned or missing $id')
                     }
